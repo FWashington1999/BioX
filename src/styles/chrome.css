@@ -75,6 +75,17 @@
   .bx-nav-cta .label-hide { display: none; }
 }
 
+@media (max-width: 560px) {
+  .bx-nav { padding: 14px 4vw; }
+  .bx-nav.scrolled { padding: 10px 4vw; }
+  .bx-logo { font-size: 16px; gap: 8px; }
+  .bx-logo .mark { width: 32px; height: 32px; }
+  .bx-logo .tld { display: none; }
+  .bx-nav-cta { gap: 6px; }
+  .bx-nav-cta .bx-btn-neon { display: none; }
+  .bx-nav-cta .bx-btn-primary { padding: 8px 12px !important; }
+}
+
 .bx-burger {
   display: none;
   width: 40px; height: 40px;
@@ -85,31 +96,75 @@
   align-items: center; justify-content: center;
 }
 @media (max-width: 980px) { .bx-burger { display: inline-flex; } }
+@media (max-width: 560px) { .bx-burger { width: 36px; height: 36px; } }
+
+.bx-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: rgba(5, 7, 13, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 9998;
+  animation: bx-fade-in .25s ease-out both;
+  cursor: pointer;
+}
 
 .bx-mobile {
-  position: fixed; inset: 0;
-  background: rgba(5,7,13,0.92);
-  backdrop-filter: blur(12px);
-  z-index: 100;
-  padding: 100px 6vw 40px;
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(78vw, 360px);
+  height: 100dvh;
+  background:
+    radial-gradient(400px 300px at 100% 0%, rgba(0,212,255,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(11,18,36,0.92), rgba(5,7,13,0.92));
+  backdrop-filter: blur(20px) saturate(140%);
+  border-left: 1px solid var(--bx-line-strong);
+  box-shadow: -30px 0 60px -10px rgba(0,0,0,0.5);
+  z-index: 9999;
+  padding: 88px 28px 32px;
+  display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+  overflow-y: auto;
+  animation: bx-slide-in-right .32s cubic-bezier(.2,.7,.2,1) both;
 }
-.bx-mobile.open { display: flex; }
+
+@keyframes bx-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes bx-slide-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+body.bx-no-scroll { overflow: hidden; }
 .bx-mobile a {
-  padding: 18px 0;
+  padding: 16px 4px;
   border-bottom: 1px solid var(--bx-line);
-  font-family: var(--bx-font-display); font-weight: 600; font-size: 22px;
+  font-family: var(--bx-font-display);
+  font-weight: 600;
+  font-size: 18px;
   color: var(--bx-white);
+  transition: color .2s, padding-left .2s;
+}
+.bx-mobile a:hover,
+.bx-mobile a:active {
+  color: var(--bx-accent);
+  padding-left: 8px;
 }
 .bx-mobile-close {
-  position: absolute; top: 24px; right: 6vw;
-  width: 44px; height: 44px; border-radius: 12px;
+  position: absolute; top: 20px; right: 20px;
+  width: 40px; height: 40px; border-radius: 10px;
   background: rgba(8,14,28,0.7); border: 1px solid var(--bx-line-strong);
   display: grid; place-items: center; color: var(--bx-white);
   cursor: pointer;
+  transition: border-color .2s, color .2s;
 }
+.bx-mobile-close:hover { color: var(--bx-accent); border-color: var(--bx-accent); }
 
 /* ─── Floating WhatsApp ─────────────────────────────────────────────── */
 .bx-wa {
@@ -347,3 +402,19 @@
   letter-spacing: 0.08em;
 }
 @media (max-width: 700px) { .bx-foot .legal { flex-direction: column; gap: 10px; text-align: center; } }
+
+/* ─── Mobile refinements (Floating WA + Footer) ──────────────────── */
+@media (max-width: 560px) {
+  .bx-wa { right: 16px; bottom: 16px; }
+  .bx-wa-btn { width: 56px; height: 56px; }
+  .bx-wa-pop {
+    width: calc(100vw - 32px);
+    right: 0;
+    bottom: 72px;
+  }
+  .bx-wa-tip { display: none; }
+
+  .bx-foot { padding: 72px 5vw 32px; }
+  .bx-foot .grid { gap: 32px; padding-bottom: 60px; }
+  .bx-foot::before { font-size: clamp(60px, 22vw, 120px); bottom: -16px; }
+}

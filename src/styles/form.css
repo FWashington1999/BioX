@@ -225,3 +225,15 @@
   color: var(--bx-accent);
   margin-bottom: 24px;
 }
+
+/* ─── Mobile refinements (form) ─────────────────────────────────── */
+@media (max-width: 560px) {
+  .bx-quote .wrap { gap: 32px; }
+  .bx-quote-card { padding: 24px 20px; }
+  .stepbar { gap: 6px; font-size: 10px; }
+  .stepbar .item { font-size: 10px; }
+  .bx-input, .bx-select, .bx-textarea { font-size: 16px; padding: 12px 14px; }
+  .bx-actions { flex-wrap: wrap; gap: 10px; }
+  .bx-actions .bx-btn { flex: 1 1 auto; justify-content: center; }
+  .bx-summary .row { grid-template-columns: 1fr; gap: 4px; }
+}

@@ -1,0 +1,47 @@
+@keyframes bx-scan {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  20%  { opacity: 0.8; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+@keyframes bx-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.55); }
+  50%      { box-shadow: 0 0 0 14px rgba(0,212,255,0); }
+}
+@keyframes bx-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes bx-spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes bx-blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+@keyframes bx-flyplane {
+  0%   { transform: translate(-10%, 10%) rotate(-8deg); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translate(120%, -40%) rotate(-8deg); opacity: 0; }
+}
+@keyframes bx-dash {
+  to { stroke-dashoffset: -200; }
+}
+@keyframes bx-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bx-tick {
+  0%   { transform: scale(0); }
+  60%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes bx-shimmer {
+  to { background-position: -200% 0; }
+}
+@keyframes bx-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.bx-reveal { opacity: 0; }
+.bx-reveal.in { animation: bx-reveal 0.9s cubic-bezier(.2,.7,.2,1) forwards; }

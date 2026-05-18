@@ -408,3 +408,25 @@
   color: var(--bx-muted);
   opacity: 0.6;
 }
+
+/* ─── Mobile refinements (sections) ──────────────────────────────── */
+@media (max-width: 560px) {
+  .bx-section { padding: 64px 5vw; }
+  .bx-sec-head { margin-bottom: 36px; }
+  .bx-sec-head h2 { font-size: clamp(26px, 7vw, 38px); }
+  .bx-sec-head .sub { font-size: 15px; }
+
+  .bx-sobre .lead { font-size: 18px; }
+  .bx-sobre .body { font-size: 14.5px; }
+  .bx-lab-card { min-height: 360px; }
+  .bx-lab-card .lab-meta .row { grid-template-columns: 1fr 1fr; }
+
+  .bx-area-7 {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .bx-area-7 .right { flex-wrap: wrap; }
+
+  .bx-step .badge { width: 60px; height: 60px; font-size: 18px; margin-top: -42px; }
+  .bx-dif { padding: 26px 22px; }
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   IconAtom,
   IconArrowRight,
@@ -20,6 +21,11 @@ export function Header({ onQuote }: HeaderProps) {
     fn();
     return () => window.removeEventListener('scroll', fn);
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('bx-no-scroll', mobile);
+    return () => document.body.classList.remove('bx-no-scroll');
+  }, [mobile]);
 
   return (
     <header className={`bx-nav ${scrolled ? 'scrolled' : ''}`}>
@@ -64,16 +70,26 @@ export function Header({ onQuote }: HeaderProps) {
         </button>
       </div>
 
-      <div className={`bx-mobile ${mobile ? 'open' : ''}`}>
-        <button className="bx-mobile-close" onClick={() => setMobile(false)} aria-label="Fechar menu">
-          <IconClose size={20} />
-        </button>
-        <a onClick={() => setMobile(false)} href="#sobre">Sobre</a>
-        <a onClick={() => setMobile(false)} href="#areas">Áreas de atuação</a>
-        <a onClick={() => setMobile(false)} href="#fluxo">Fluxo</a>
-        <a onClick={() => setMobile(false)} href="#diferenciais">Diferenciais</a>
-        <a onClick={() => setMobile(false)} href="#cotacao">Contato / Cotação</a>
-      </div>
+      {mobile && createPortal(
+        <>
+          <div
+            className="bx-mobile-backdrop"
+            onClick={() => setMobile(false)}
+            aria-hidden="true"
+          />
+          <div className="bx-mobile" role="dialog" aria-modal="true" aria-label="Menu">
+            <button className="bx-mobile-close" onClick={() => setMobile(false)} aria-label="Fechar menu">
+              <IconClose size={18} />
+            </button>
+            <a onClick={() => setMobile(false)} href="#sobre">Sobre</a>
+            <a onClick={() => setMobile(false)} href="#areas">Áreas de atuação</a>
+            <a onClick={() => setMobile(false)} href="#fluxo">Fluxo</a>
+            <a onClick={() => setMobile(false)} href="#diferenciais">Diferenciais</a>
+            <a onClick={() => setMobile(false)} href="#cotacao">Contato / Cotação</a>
+          </div>
+        </>,
+        document.body,
+      )}
     </header>
   );
 }

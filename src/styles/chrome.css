@@ -320,6 +320,7 @@ body.bx-no-scroll { overflow: hidden; }
     radial-gradient(900px 500px at 50% -10%, rgba(0,212,255,0.10), transparent 60%),
     linear-gradient(180deg, #05070D, #02040A);
   border-top: 1px solid var(--bx-line);
+  overflow: hidden;
 }
 .bx-foot::before {
   content: "BIOXIMPORT";

@@ -41,15 +41,15 @@ html, body {
   padding: 0;
   background: var(--bx-black);
   color: var(--bx-white);
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 body {
-  overflow-x: clip;
   font-family: var(--bx-font-body);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   line-height: 1.55;
-  overflow-x: clip;
 }
 
 body::before {

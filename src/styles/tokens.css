@@ -41,10 +41,9 @@ html, body {
   padding: 0;
   background: var(--bx-black);
   color: var(--bx-white);
-  overflow-x: hidden;
-  max-width: 100vw;
 }
 body {
+  overflow-x: clip;
   font-family: var(--bx-font-body);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;

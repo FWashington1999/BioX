@@ -31,7 +31,7 @@ export function FloatingWA() {
         <div className="bx-wa-bubble">
           Olá! Sou da equipe BIOXIMPORT. Sobre qual matéria-prima podemos te ajudar com uma cotação internacional?
           <br />
-          <small style={{ marginTop: 6, display: 'block' }}>15:24 ✓✓</small>
+          <small style={{ marginTop: 6, display: 'block' }}>✓✓</small>
         </div>
         <a
           className="cta"

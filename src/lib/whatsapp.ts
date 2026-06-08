@@ -1,5 +1,5 @@
 // TODO: replace placeholder with real BioxImport WhatsApp number (DDI + DDD, digits only)
-export const WHATSAPP_NUMBER = '5511999999999';
+export const WHATSAPP_NUMBER = '5511947281899';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export interface QuoteData {

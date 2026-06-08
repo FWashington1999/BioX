@@ -38,8 +38,8 @@ export function Footer() {
 
         <div>
           <h6>Contato</h6>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener">+55 (00) 0000-0000</a>
-          <a href="mailto:contato@bioximport.com.br">contato@bioximport.com.br</a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener">+55 (11) 947281899</a>
+          <a href="mailto:bioximport@gmail.com.br">bioximport@gmail.com.br</a>
           <a href="https://instagram.com/bioximport" target="_blank" rel="noopener">@bioximport</a>
           <a href="#" style={{ color: 'var(--bx-muted)', cursor: 'default' }}>São Paulo · SP · Brasil</a>
         </div>
@@ -52,7 +52,7 @@ export function Footer() {
       </div>
 
       <div className="legal">
-        <div>© 2026 BIOXIMPORT · CNPJ 00.000.000/0001-00 · Todos os direitos reservados.</div>
+        <div>© 2026 BIOXIMPORT · CNPJ 66.825.911/0001-66 · Todos os direitos reservados.</div>
         <div>Site institucional · v1.0 · <span style={{ color: 'var(--bx-accent)' }}>● online</span></div>
       </div>
     </footer>
